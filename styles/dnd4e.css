@@ -1,0 +1,135 @@
+/* BURBLE for D&D4e */
+
+*.chat-message{
+	--background-alternate:rgba(0,0,0,0.12);
+	--colour-text-inside:var(--color-text-dark-primary);
+	--background-container:url('../../../ui/parchment.jpg') repeat;
+}
+.chat-message:is(.chat-card,.dot-report) .message-content{
+	padding:0;
+	background:transparent;
+	color:var(--colour-text-outside);
+}
+.chat-message.chat-card .message-content .card-content,
+.chat-message.dot-report .message-content .dot-report{
+	background:var(--background-container);
+	color:var(--colour-text-inside);
+}
+.chat-message.dot-report .message-content .dot-report{
+	padding:0.3rem;
+}
+.chat-message.chat-card .message-content .card-content p:is(.chat-flavour,.flavour){
+	font-style:italic;
+	background:var(--gradient-4e);
+}
+.dnd4e.chat-card .card-header,
+.dnd4e.chat-card .card-buttons button,
+.fakechatbutton,
+.effects-tray{
+	background:var(--background-container);
+	color:var(--colour-text-inside);
+}
+.dnd4e.chat-card .card-buttons button,
+.fakechatbutton{
+	border:var(--border-normal);
+}
+.dnd4e.chat-card .card-buttons{
+	margin:2px 0;
+}
+.chatDamageButtons{
+	margin:5px 0;
+	display:-webkit-box;
+	display:-ms-flexbox;
+	display:flex;
+	-ms-flex-wrap:wrap;
+	    flex-wrap:wrap;
+	-webkit-box-pack:justify;
+	    -ms-flex-pack:justify;
+	        justify-content:space-between;
+}
+.fakechatbutton{
+	margin:0;
+	-ms-flex-preferred-size:calc(50% - 2px);
+	    flex-basis:calc(50% - 2px);
+	overflow:hidden;
+	-webkit-box-flex:0;
+	    -ms-flex-positive:0;
+	        flex-grow:0;
+}
+.effects-tray{
+	padding:0.3rem 0.5rem;
+	border-radius:3px;
+}
+.effects-tray .effects{
+	margin:0;
+	padding:0;
+}
+.effects-tray:not(.collapsed) .effects{
+	margin-top:0.3rem;
+}
+.dnd4e.chat-card .effects-tray .effects .effect{
+	padding:0.3rem;
+    margin-bottom:0;
+    border-bottom:0;
+}
+.dnd4e.chat-card .effects-tray .effects .effect img{
+	border:unset;
+}
+.dnd4e .effects-tray .name-stacked .title{
+	font-family:inherit;
+}
+.effects-tray .effects .effect:nth-child(odd){
+	background:var(--background-alternate);
+}
+.chat-message.notice.system-message .message-content>:is(b,p):first-child,
+.chat-message.notice.system-message .message-content>.chat-portrait-flexrow:first-child+:is(b,p){
+	font-family:revert;
+	font-size:0.7rem;
+	padding:0.3rem;
+	font-style:revert;
+	text-transform:uppercase;
+	position:relative;
+	background:var(--background-alternate);
+	margin-top:-0.3rem;
+	margin-left:-0.3rem;
+	margin-right:-0.3rem;
+}
+.dnd4e.chat-card .card-header{
+	background:var(--background-other);
+	border:unset;
+	padding:0;
+}
+.dnd4e.power-card .item-name{
+	background:unset;
+}
+.dnd4e.power-card.use-atwill .card-header{
+	background:var(--background-atwill);
+}
+.dnd4e.power-card.use-encounter .card-header{
+	background:var(--background-encounter);
+}
+.dnd4e.power-card.use-daily .card-header{
+	background:var(--background-daily);
+}
+.dnd4e.power-card.use-item .card-header{
+	background:var(--background-item);
+}
+.dnd4e.power-card.use-recharge .card-header{
+	background:var(--background-recharge);
+}
+.dnd4e.power-card.use-other .card-header{
+	background:var(--background-other);
+}
+.dnd4e.chat-card .card-content>p{
+	margin:0;
+	padding:1px 3px;
+	background:var(--gradient-4e);
+}
+.chat-message a.content-link,.chat-message a.inline-result{
+	border:0;
+	background:0;
+	padding:0;
+	text-decoration:underline;
+	-webkit-text-decoration-style:dotted;
+	        text-decoration-style:dotted;
+}

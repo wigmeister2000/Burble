@@ -1,0 +1,320 @@
+#chat-log{
+	--background-container:url('../../../ui/parchment.jpg') repeat;
+	--background-alternate:rgba(0,0,0,0.1);
+	--colour-text-inside:var(--color-text-dark-primary);
+	--colour-text-outside:var(--color-text-light-primary);
+}
+.chat-message{
+	background:none;
+	color:var(--colour-text-outside);
+}
+.chat-message .message-content{
+	background:var(--background-container);
+	color:var(--colour-text-inside);
+	padding:5px;
+}
+.chat-message:is(.speech,.emote) .message-content,
+.chat-message:not(.notice) .message-header .flavor-text{
+    font-family:var(--comic-text-font);
+	font-size:var(--comic-text-size);
+}
+.chat-message.whisper{
+	background:rgba(232,232,239,0.5);
+}
+.chat-message:not(.whisper) .message-header{
+	color:var(--colour-text-outside);
+}
+.chat-message.whisper .message-header{
+	color:var(--color-text-dark-primary);
+}
+.chat-message .chat-item img{
+    width:2em;
+    height:2em;
+    margin-top:3px;
+}
+.chat-message :is(ul,ol){
+    margin:0.3em 0;
+}
+.chat-message .message-header :not(.flavor-text){
+    text-transform:uppercase;
+    font-size:0.7rem;
+    font-weight:500;
+}
+.chat-message:not(.whisper) .message-metadata{
+	color:var(--colour-text-outside);
+}
+.chat-message .message-metadata:is(:hover,:active,:focus){
+	color:#fff;
+}
+.chat-message .message-header{
+	line-height:1;
+	position:relative;
+}
+.chat-message .message-header .whisper-to{
+	text-align:right;
+}
+.chat-message:not(.notice) .message-header .flavor-text{
+	padding:0.3em;
+	background:var(--background-container);
+	color:var(--colour-text-inside);
+	position:relative;
+}
+
+/* ---- Speech Bubbles ---- */
+.chat-message:not(.narrator-narrative,.narrator-chat).speech .message-content{
+	border-radius:5px;
+	padding:0.5rem;
+	background:#fff;
+	color:#000;
+	margin-top:0.25rem;
+}
+.chat-message:not(.narrator-narrative,.narrator-chat).speech .message-content::before{
+	content:'\2BC5';
+	color:#fff;
+	display:block;
+	position:relative;
+	z-index:9;
+    width:10px;
+    height:10px;
+    margin-top:-10px;
+	line-height:0;
+    margin-left:-2px;
+}
+
+/* ---- Emotes ---- */
+.chat-message.emote{
+    background:transparent;
+}
+.chat-message.emote .message-content,
+.chat-message .message-header .flavor-text{
+	padding:0.5rem;
+	background:var(--background-container);
+	font-style:italic;
+	color:var(--color-text-dark-primary);
+}
+
+/* ---- Notices ---- */
+.chat-message.notice .message-content>b{
+	display:block;
+}
+.chat-message.notice .message-content>b,
+.chat-message.notice .message-content>p{
+	padding:2px 0;
+	margin:0;
+}
+.chat-message.notice .message-content>b,
+.chat-message.notice .message-content>p:first-of-type{
+	background:var(--background-container);
+	font-weight:normal;
+	font-size:var(--font-size-12);
+}
+.chat-message.notice .message-content{
+	background:var(--background-container);
+	color:var(--colour-text-inside);
+	padding:0.3rem;
+}
+.chat-message.notice .message-header .flavor-text{
+	font-family:revert;
+	font-size:0.7rem;
+	padding:0.3rem;
+	font-style:revert;
+	text-transform:uppercase;
+	background:var(--background-container);
+	background-color:var(--background-alternate);
+	background-blend-mode:overlay;
+}
+
+/* ---- Actual Tables ---- */
+.chat-message.notice .message-content table{
+	background:unset;
+	border:none;
+	margin:0;
+}
+.chat-message.notice .message-content table tr:nth-child(odd){
+	background:var(--background-alternate);
+}
+.chat-message.notice .message-content table tr:nth-child(even){
+	background:unset;
+}
+
+/* ---- Rolls ---- */
+.chat-message .dice-roll :is(.dice-formula,.dice-total){
+	border:none;
+	-webkit-box-shadow:unset;
+	        box-shadow:unset;
+	background:var(--background-alternate);
+}
+.chat-message .dice-roll .dice-formula{
+	margin-bottom:0;
+	border-bottom:1px dashed rgba(255,255,255,0.5);
+	border-radius:3px 3px 0 0;
+}
+.chat-message .dice-roll .dice-total{
+	margin-top:0;
+	border-radius:0 0 3px 3px;
+}
+.chat-message .dice-roll .dice-tooltip{
+	background:var(--background-alternate);
+}
+.chat-message .dice-roll .dice-tooltip .dice-rolls{
+	margin:0;
+	border-bottom:1px dashed rgba(255,255,255,0.5);
+}
+.chat-message .dice-roll .dice-tooltip .part-header .part-formula{
+    padding-left:0.25em;
+}
+
+/* ---- Roll Tables ---- */
+.chat-message.roll-table .message-header .flavor-text{
+	background:var(--background-container);
+	position:relative;
+	background:var(--background-container);
+	background-color:var(--background-alternate);
+	background-blend-mode:overlay;
+}
+.chat-message .table-draw .table-results .table-result{
+	border-bottom:none;
+}
+.chat-message .table-draw .table-results .table-result:nth-child(odd){
+	background:var(--background-alternate);
+}
+.chat-message .table-draw .table-results .table-result img.result-image{
+	-webkit-box-flex:0;
+	    -ms-flex:0 0 25px;
+	        flex:0 0 25px;
+    width:25px;
+    height:25px;
+	-o-object-fit:contain;
+	   object-fit:contain;
+	border:unset;
+	background:rgba(0,0,0,0.5);
+}
+
+/* ---- Chat Portrait support! ---- */
+h4.chat-portrait-flexrow{
+	display:none;
+}
+.message img.chat-portrait-message-portrait-generic{
+	margin-bottom:0;
+}
+.chat-portrait-message-header-generic .whisper-to{
+	position:absolute;
+	top:1.4em;
+	right:0;
+}
+
+/* ---- Simply Portraits support ---- */
+.chat-message .message-header:has(>img.simply-portraits)~.message-content :nth-child(1 of .dice-roll) .dice-result>.target{
+	margin-top:-0.3em;
+	padding-top:0em;
+	padding-bottom:0.2em;
+}
+.chat-message .message-header:has(>img.simply-portraits){
+	padding-bottom:0px !important;
+}
+
+/* DF Chat Enhancements support! */
+.dfce-cm-middle>.message-content,
+.dfce-cm-bottom>.message-content{
+    padding-right:unset;
+}
+.dfce-cm-middle .message-delete,
+.dfce-cm-bottom .message-delete{
+    z-index:9;
+    top:0.5em;
+    right:0.5em;
+}
+.chat-message.dfce-cm-top,
+.chat-message.dfce-cm-middle{
+	margin-bottom:0;
+	padding-bottom:0;
+	border-bottom:unset;
+}
+.chat-message.dfce-cm-bottom,
+.chat-message.dfce-cm-middle{
+	margin-top:0;
+	padding-top:0;
+	border-top:unset;
+}
+.chat-message:is(.dfce-cm-middle,.dfce-cm-bottom) .message-header .message-delete{
+	margin-right:0.4em;
+}
+.chat-message:is(.dfce-cm-middle,.dfce-cm-bottom) .message-header img{
+	height:0;
+	width:0;
+	border:unset !important;
+	margin:unset;
+	padding:0;
+}
+.chat-message.dfce-cm-top.speech .message-content{
+	padding-bottom:0.2em;
+	border-radius:5px 5px 0 0;
+}
+.chat-message.dfce-cm-middle.speech .message-content{
+	padding-bottom:0.2em;
+	border-radius:0;
+}
+.chat-message.dfce-cm-bottom.speech .message-content{
+	border-radius:0 0 5px 5px;
+}
+.chat-message:is(.dfce-cm-middle,.dfce-cm-bottom).speech .message-content{
+	padding-top:0.2em;
+}
+.chat-message:is(.dfce-cm-middle,.dfce-cm-bottom).speech .message-content::before{
+	content:unset;
+}
+.chat-message:is(.dfce-cm-middle,.dfce-cm-bottom).speech .message-content{
+	margin-top:0;
+}
+.chat-message.dfce-cm-top.emote .message-content,
+.chat-message.dfce-cm-middle.emote .message-content{
+	padding-bottom:0.2em;
+}
+.chat-message.dfce-cm-bottom.emote .message-content,
+.chat-message.dfce-cm-middle.emote .message-content{
+	padding-top:0.2em;
+}
+
+/* ---- Item Piles support! ---- */
+.chat-message .item-piles-chat-card{
+	padding:0;
+}
+.chat-message.item-piles .chat-portrait-flexrow~.item-piles-chat-card>.item-piles-chat-card-title>p:first-child{
+	margin-left:calc(40px);
+}
+.item-piles-chat-card li:nth-child(odd){
+	background:var(--background-alternate);
+}
+
+/* ---- Obnoxious hack to stop Chat Portrait form messing with Item Piles ---- */
+.chat-message.item-piles .chat-portrait-message-header-generic .flavor-text{
+	position:relative;
+}
+.chat-message.item-piles .chat-portrait-message-header-generic .flavor-text img{
+	position:absolute;
+	bottom:calc(-36px - 1em);
+}
+
+/* ---- Visual Active Effects tweaks ---- */
+#visual-active-effects h1.effect-info-header .name{
+	font-size:0.7em;
+}
+
+/* ---- Condition lab chat summary tweaks ---- */
+.chat-message.notice .message-content td[style="padding-right:15px;width:45px"]{
+    padding:2px;
+	padding-right:2px !important;
+	width:1.8em !important;
+}
+.chat-message.notice .message-content td[style="padding-right:15px;width:45px"] img{
+	height:calc(1.8em - 5px);
+	width:calc(1.8em - 5px);
+	-o-object-fit:contain;
+	   object-fit:contain;
+	margin:2px;
+    border:unset;
+}
+.chat-message.notice .message-content td[style="padding-right:15px;width:45px"]+td{
+	padding-right:4px;
+	padding-left:7px;
+}

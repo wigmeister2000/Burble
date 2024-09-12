@@ -1,0 +1,21 @@
+/* BURBLE for BitD */
+
+.chat-message .message-content .label-stripe-chat{
+	margin-left:-5px;
+	margin-right:-5px;
+	margin-top:-5px;
+}
+.chat-message .message-content .label-stripe-chat-small{
+	margin-left:-5px;
+	margin-right:-5px;
+}
+.chat-message.burble .blades-die-tooltip .description+em{
+	display:block;
+	font-family:var(--comic-text-font);
+	font-size:var(--comic-text-size);
+	margin:-5px -5px 0.3rem;
+	padding:0.5rem;
+	font-style:italic;
+	color:#000;
+	font-weight:500;
+}
