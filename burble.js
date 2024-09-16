@@ -29,7 +29,6 @@ export default class Burble{
 				head.appendChild(link);
 			}
 			
-			//console.log(`GAME SYSTEM: ${game.system.id}`);
 			if (['dnd4e','blades-in-the-dark'].includes(game.system.id)){
 				var link = document.createElement('link');
 				link.rel = 'stylesheet';
@@ -37,12 +36,14 @@ export default class Burble{
 				link.href = `./modules/fox-burble/styles/${game.system.id}.css`;
 				head.appendChild(link);
 			
-				if (game.settings.get("dnd4e","darkMode")){
-					link = document.createElement('link');
-					link.rel = 'stylesheet';
-					link.type = 'text/css';
-					link.href = './modules/fox-burble/styles/dnd4e_dark.css';
-					head.appendChild(link);
+				if ('dnd4e' == game.system.id){
+					if (game.settings.get("dnd4e","darkMode")){
+						link = document.createElement('link');
+						link.rel = 'stylesheet';
+						link.type = 'text/css';
+						link.href = './modules/fox-burble/styles/dnd4e_dark.css';
+						head.appendChild(link);
+					}
 				}
 			}
 		
