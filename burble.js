@@ -59,7 +59,7 @@ Hooks.once('init', () => {
 Hooks.on('renderChatMessage', async function(message, html, data){
 	if(!game.settings.get(Burble.ID,Burble.SETTINGS.ON_OFF)) return;
 	
-	console.log(data);
+	//console.log(data);
 	html[0].classList.add('burble');
 	if(data?.cssClass=="emote") return;
 	
