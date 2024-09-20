@@ -7,6 +7,7 @@
 .chat-message{
 	background:none;
 	color:var(--colour-text-outside);
+	border-width:1px;
 }
 .chat-message .message-content{
 	background:var(--background-container);
@@ -20,6 +21,7 @@
 }
 .chat-message.whisper{
 	background:rgba(232,232,239,0.5);
+	border-width:1px;
 }
 .chat-message:not(.whisper) .message-header{
 	color:var(--colour-text-outside);
@@ -32,8 +34,9 @@
     height:2em;
     margin-top:3px;
 }
-.chat-message :is(ul,ol){
-    margin:0.3em 0;
+.chat-message .message-content :is(ul,ol){
+	margin:0;
+	padding:0.3em 0 0.3em 1.5em;
 }
 .chat-message .message-header :not(.flavor-text){
     text-transform:uppercase;
@@ -80,10 +83,16 @@
 	line-height:0;
     margin-left:-2px;
 }
+.chat-message.whisper:not(.narrator-narrative,.narrator-chat).speech .message-content{
+    color:#5e5e5e;
+    box-shadow:0 0 1px #fff;
+    border:1px dashed #5e5e5e;
+}
 
 /* ---- Emotes ---- */
 .chat-message.emote{
     background:transparent;
+	border-width:1px;
 }
 .chat-message.emote .message-content,
 .chat-message .message-header .flavor-text{
@@ -284,6 +293,11 @@ h4.chat-portrait-flexrow{
 }
 .item-piles-chat-card li:nth-child(odd){
 	background:var(--background-alternate);
+}
+
+/* ---- Narrator Tools support! ---- */
+#chat-log .message.narrator-chat{
+	border:unset;
 }
 
 /* ---- Obnoxious hack to stop Chat Portrait form messing with Item Piles ---- */
