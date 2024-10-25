@@ -1,8 +1,7 @@
 {
-	"title": "Burble",
 	"id": "fox-burble",
+	"title": "Burble",
 	"description": "A comic-book inspired chat redesign",
-	"version": "1.0.2",
 	"url": "https://github.com/FoxLee/Burble/",
 	"manifest": "https://github.com/FoxLee/Burble/releases/latest/download/module.json",
 	"download": "https://github.com/FoxLee/Burble/releases/latest/download/module.zip",
@@ -15,9 +14,10 @@
 		"email": "fox@invincible.ink",
 		"url": "https://www.invincible.ink"
 	}],
+	"version": "1.1",
 	"compatibility": {
 		"minimum": "11",
-		"verified": "11.315"
+		"verified": "12.331"
 	},
 	"esmodules": [
 		"burble.js"
@@ -36,13 +36,10 @@
 			"flags": {}
 		}
 	],
-	"hotReload": {
-		"extensions": [
-			"css",
-			"html"
-		],
-		"paths": [
-			"styles/"
-		]
+	"flags":{
+		"hotReload": {
+			"extensions": ["css","html"],
+			"paths": ["styles/"]
+		}
 	}
 }
