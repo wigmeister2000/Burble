@@ -103,9 +103,6 @@
 }
 
 /* ---- Notices ---- */
-.chat-message.notice .message-content>b{
-	display:block;
-}
 .chat-message.notice .message-content>b,
 .chat-message.notice .message-content>p{
 	padding:2px 0;
