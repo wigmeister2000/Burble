@@ -81,7 +81,7 @@
 .effects-tray .effects .effect:nth-child(odd){
 	background:var(--background-alternate);
 }
-.chat-message.notice.system-message .message-content>:is(b,p):first-child,
+
 .chat-message.notice.system-message .message-content>.chat-portrait-flexrow:first-child+:is(b,p){
 	font-family:revert;
 	font-size:0.7rem;

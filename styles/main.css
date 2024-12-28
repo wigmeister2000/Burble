@@ -38,7 +38,7 @@
 	margin:0;
 	padding:0.3em 0 0.3em 1.5em;
 }
-.chat-message .message-header :not(.flavor-text){
+.chat-message .message-header {
     text-transform:uppercase;
     font-size:0.7rem;
     font-weight:500;
@@ -111,12 +111,6 @@
 	padding:2px 0;
 	margin:0;
 }
-.chat-message.notice .message-content>b,
-.chat-message.notice .message-content>p:first-of-type{
-	background:var(--background-container);
-	font-weight:normal;
-	font-size:var(--font-size-12);
-}
 .chat-message.notice .message-content{
 	background:var(--background-container);
 	color:var(--colour-text-inside);
@@ -124,10 +118,10 @@
 }
 .chat-message.notice .message-header .flavor-text{
 	font-family:revert;
-	font-size:0.7rem;
+	font-size:0.8rem;
 	padding:0.3rem;
 	font-style:revert;
-	text-transform:uppercase;
+	text-transform:none;
 	background:var(--background-container);
 	background-color:var(--background-alternate);
 	background-blend-mode:overlay;
