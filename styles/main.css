@@ -145,7 +145,7 @@
 	border:none;
 	-webkit-box-shadow:unset;
 	        box-shadow:unset;
-	background:var(--background-alternate);
+	background:var(--background-container);
 }
 .chat-message .dice-roll .dice-formula{
 	margin-bottom:0;
