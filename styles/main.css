@@ -223,30 +223,29 @@ h4.chat-portrait-flexrow{
 }
 
 /* DF Chat Enhancements support! */
-.dfce-cm-middle>.message-content,
-.dfce-cm-bottom>.message-content{
+.chat-message:is(.dfce-cm-middle,.dfce-cm-bottom)>.message-content{
     padding-right:unset;
 }
-.dfce-cm-middle .message-delete,
-.dfce-cm-bottom .message-delete{
-    z-index:9;
-    top:0.5em;
-    right:0.5em;
-}
-.chat-message.dfce-cm-top,
-.chat-message.dfce-cm-middle{
+.chat-message:is(.dfce-cm-top,.dfce-cm-middle){
 	margin-bottom:0;
 	padding-bottom:0;
 	border-bottom:unset;
 }
-.chat-message.dfce-cm-bottom,
-.chat-message.dfce-cm-middle{
+.chat-message:is(.dfce-cm-middle,.dfce-cm-bottom){
 	margin-top:0;
 	padding-top:0;
 	border-top:unset;
 }
+.chat-message:is(.dfce-cm-middle,.dfce-cm-bottom) .message-header .message-timestamp{
+	display:none;
+}
 .chat-message:is(.dfce-cm-middle,.dfce-cm-bottom) .message-header .message-delete{
 	margin-right:0.4em;
+    display:block;
+    position:absolute;
+    z-index:9;
+    top:0.5em;
+    right:0.5em;
 }
 .chat-message:is(.dfce-cm-middle,.dfce-cm-bottom) .message-header img{
 	height:0;
@@ -275,12 +274,10 @@ h4.chat-portrait-flexrow{
 .chat-message:is(.dfce-cm-middle,.dfce-cm-bottom).speech .message-content{
 	margin-top:0;
 }
-.chat-message.dfce-cm-top.emote .message-content,
-.chat-message.dfce-cm-middle.emote .message-content{
+.chat-message:is(.dfce-cm-top,.dfce-cm-middle).emote .message-content{
 	padding-bottom:0.2em;
 }
-.chat-message.dfce-cm-bottom.emote .message-content,
-.chat-message.dfce-cm-middle.emote .message-content{
+.chat-message:is(.dfce-cm-middle,.dfce-cm-bottom).emote .message-content{
 	padding-top:0.2em;
 }
 
